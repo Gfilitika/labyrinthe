@@ -8,7 +8,7 @@
    
    Ce module gère un joueur. 
 """
-
+#tauliki
 def Joueur(nom):
     """
     creer un nouveau joueur portant le nom passé en paramètre. Ce joueur possède une liste de trésors à trouver vide
