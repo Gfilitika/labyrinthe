@@ -38,8 +38,8 @@ def prochainTresor(joueur):
         joueur le joueur
     résultat un entier représentant le trésor ou None
     """
+    return joueur['tresors'][0]
 
-    pass
 
 def tresorTrouve(joueur):
     """ 
@@ -72,3 +72,4 @@ if __name__=='__main__':
   print(j)
   ajouterTresor(j,4)
   print(j)
+  print(prochainTresor(j))
