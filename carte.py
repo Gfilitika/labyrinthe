@@ -19,16 +19,17 @@ le caractère 'Ø' indique que l'indice ne correspond pas à une carte
 listeCartes=['╬','╦','╣','╗','╩','═','╝','Ø','╠','╔','║','Ø','╚','Ø','Ø','Ø']
 
 
-def Carte( nord, est, sud, ouest, tresor=0, pions=[]):
+def Carte (nord, est, sud, ouest, tresor=0, pions=[]):
     """
     permet de créer une carte:
     paramètres:
     nord, est, sud et ouest sont des booléens indiquant s'il y a un mur ou non dans chaque direction
     tresor est le numéro du trésor qui se trouve sur la carte (0 s'il n'y a pas de trésor)
     pions est la liste des pions qui sont posés sur la carte (un pion est un entier entre 1 et 4)
-    """
-    pass
-
+   """
+    carte = {'nord':nord, 'est':est, 'sud':sud, 'ouest':ouest, 'tresor':tresor, 'pions':[]}
+    return carte
+    
 def estValide(c):
     """
     retourne un booléen indiquant si la carte est valide ou non c'est à dire qu'elle a zéro un ou deux murs
@@ -224,3 +225,7 @@ def passageEst(carte1,carte2):
     résultat un booléen    
     """
     pass
+
+
+if __name__=='__main__':
+  c=carte()
