@@ -48,7 +48,8 @@ def tresorTrouve(joueur):
         joueur le joueur
     la fonction ne retourne rien mais modifie le joueur
     """
-    pass
+    del (joueur['tresors'][0])
+    return joueur
 
 def getNbTresorsRestants(joueur):
     """
@@ -56,7 +57,7 @@ def getNbTresorsRestants(joueur):
     paramètre: joueur le joueur
     résultat: le nombre de trésors attribués au joueur
     """
-    pass
+    return len(joueur['tresors'])
 
 def getNom(joueur):
     """
@@ -64,6 +65,7 @@ def getNom(joueur):
     paramètre: joueur le joueur
     résultat: le nom du joueur 
     """
+    return joueur['nom']
 
 if __name__=='__main__':
   j=Joueur('Filitika')
@@ -72,4 +74,10 @@ if __name__=='__main__':
   print(j)
   ajouterTresor(j,4)
   print(j)
+  ajouterTresor(j,6)
+  print(j)
   print(prochainTresor(j))
+  print(getNbTresorsRestants(j))
+  print(getNom(j))
+  print(tresorTrouve(j))
+  
