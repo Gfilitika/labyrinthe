@@ -15,7 +15,10 @@ def Joueur(nom):
     paramètre: nom une chaine de caractères
     retourne le joueur ainsi créé
     """
-    pass
+    l={'nom':nom,'tresors':[]}
+
+    return l
+
 def ajouterTresor(joueur,tresor):
     """
     ajoute un trésor à trouver à un joueur (ce trésor sera ajouter en fin de liste) Si le trésor est déjà dans la liste des trésors à trouver la fonction ne fait rien
@@ -24,6 +27,9 @@ def ajouterTresor(joueur,tresor):
         tresor un entier strictement positif
     la fonction ne retourne rien mais modifie le joueur
     """
+
+    
+
     pass
 
 def prochainTresor(joueur):
@@ -59,3 +65,7 @@ def getNom(joueur):
     résultat: le nom du joueur 
     """
     pass
+
+if __name__=='__main__':
+  j=Joueur('Filitika')
+  print(j) 
