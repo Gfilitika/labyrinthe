@@ -35,6 +35,8 @@ def estValide(c):
     retourne un booléen indiquant si la carte est valide ou non c'est à dire qu'elle a zéro un ou deux murs
     paramètre: c une carte
     """
+    cpt = 0
+    for     
     pass
 
 def murNord(c):
@@ -228,4 +230,5 @@ def passageEst(carte1,carte2):
 
 
 if __name__=='__main__':
-  c=carte()
+  c=Carte (False, True, False, True, tresor=0, pions=[])
+  print(c)          
