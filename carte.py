@@ -123,7 +123,10 @@ def prendreTresor(c):
     paramètre: c une carte
     résultat l'entier représentant le trésor qui était sur la carte
     """
-    pass
+    res=c['tresor']
+    del c['tresor']
+    c['tresor']=0
+    return res
 
 def mettreTresor(c,tresor):
     """
@@ -160,23 +163,22 @@ def tournerHoraire(c):
     """
     fait tourner la carte dans le sens horaire
     paramètres: c une carte
-    Cette fonction modifie la carte mais ne retourne rien    
-    """
+    Cette fonction modifie la carte mais ne retourne rien   """
+    
     pass
 
 def tournerAntiHoraire(c):
     """
     fait tourner la carte dans le sens anti-horaire
     paramètres: c une carte
-    Cette fonction modifie la carte mais ne retourne rien    
-    """
+    Cette fonction modifie la carte mais ne retourne rien    """
     pass
+
 def tourneAleatoire(c):
     """
     faire tourner la carte d'un nombre de tours aléatoire
     paramètres: c une carte
-    Cette fonction modifie la carte mais ne retourne rien    
-    """
+    Cette fonction modifie la carte mais ne retourne rien    """
     pass
 
 def coderMurs(c):
@@ -201,6 +203,7 @@ def decoderMurs(c,code):
     Cette fonction modifie la carte mais ne retourne rien
     """    
     pass
+
 def toChar(c):
     """
     fournit le caractère semi graphique correspondant à la carte (voir la variable listeCartes au début de ce script)
@@ -259,10 +262,17 @@ if __name__=='__main__':
   #print(getNbPions(c))
   print(possedePion(c,2))
   print(getTresor(c))
-  #print(prendreTresor(c))
+  print(prendreTresor(c))
+  print(c)
   print(mettreTresor(c,2))
   print(c)
   print(prendrePion(c,6))
   print(c)
   print(poserPion(c,5))
   print(c)
+  print(tournerHoraire(c))
+  print(c)
+  print(tournerHoraire(c))
+  print(c)
+  #print(tournerAntiHoraire(c))
+  #print(c)

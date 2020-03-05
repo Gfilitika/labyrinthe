@@ -1,3 +1,4 @@
 language = "python3"
-  run = "python3 carte.py"
-  
+  run = "python3 joueur.py"
+
+

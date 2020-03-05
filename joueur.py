@@ -38,7 +38,11 @@ def prochainTresor(joueur):
         joueur le joueur
     résultat un entier représentant le trésor ou None
     """
-    return joueur['tresors'][0]
+    if len(joueur['tresors']) == 0:
+      res=None
+    else:
+      res=joueur['tresors'][0]
+    return res
 
 
 def tresorTrouve(joueur):
@@ -49,7 +53,6 @@ def tresorTrouve(joueur):
     la fonction ne retourne rien mais modifie le joueur
     """
     del (joueur['tresors'][0])
-    return joueur
 
 def getNbTresorsRestants(joueur):
     """
@@ -77,7 +80,9 @@ if __name__=='__main__':
   ajouterTresor(j,6)
   print(j)
   print(prochainTresor(j))
+  print(tresorTrouve(j))
+  print(j)
   print(getNbTresorsRestants(j))
   print(getNom(j))
-  print(tresorTrouve(j))
+  print(j)
   

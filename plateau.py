@@ -22,6 +22,8 @@ def Plateau(nbJoueurs, nbTresors):
                 ont été placée de manière aléatoire
               - la carte amovible qui n'a pas été placée sur le plateau
     """
+    p={'nbJoueurs':0,'nbTresors':0}
+    return p
     pass
 
 

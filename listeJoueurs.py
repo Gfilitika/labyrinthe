@@ -18,7 +18,9 @@ def ListeJoueurs(nomsJoueurs):
     paramètre: nomsJoueurs une liste de chaines de caractères
     résultat: la liste des joueurs avec un joueur courant mis à 0
     """
-    pass
+    l=[]
+    l.extend(nomsJoueurs)
+    return l
 
 def ajouterJoueur(joueurs, joueur):
     """
@@ -27,7 +29,7 @@ def ajouterJoueur(joueurs, joueur):
                 joueur le joueur à ajouter
     cette fonction ne retourne rien mais modifie la liste des joueurs
     """
-    pass
+    joueurs.extend(joueur)
 
 def initAleatoireJoueurCourant(joueurs):
     """
@@ -36,6 +38,7 @@ def initAleatoireJoueurCourant(joueurs):
     cette fonction ne retourne rien mais modifie la liste des joueurs
     """
     pass
+    
 def distribuerTresors(joueurs,nbTresors=24, nbTresorMax=0):
     """
     distribue de manière aléatoire des trésors entre les joueurs.
@@ -142,3 +145,9 @@ def joueurCourantAFini(joueurs):
     résultat: un booleen indiquant si le joueur courant a fini
     """
     pass
+
+if __name__=='__main__':
+  joueurs=(ListeJoueurs(['Joseph','Mathieu']))
+  print(joueurs)
+  print(ajouterJoueur(joueurs, ['Leon']))
+  print(joueurs)
