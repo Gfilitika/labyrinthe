@@ -19,24 +19,26 @@ def ListeJoueurs(nomsJoueurs):
     résultat: la liste des joueurs avec un joueur courant mis à 0
     """
     l=[]
-    l.extend(nomsJoueurs)
-    return l
+    for x in nomsJoueurs:
+      l.append(Joueur(x))
+    return {'liste':l,'indice':0}
 
 def ajouterJoueur(joueurs, joueur):
     """
     ajoute un nouveau joueur à la fin de la liste
-    paramètres: joueurs un liste de joueurs
+    paramètres: joueurs une liste de joueurs
                 joueur le joueur à ajouter
     cette fonction ne retourne rien mais modifie la liste des joueurs
     """
-    joueurs.extend(joueur)
+    joueurs['liste'].append(joueur)
 
 def initAleatoireJoueurCourant(joueurs):
     """
     tire au sort le joueur courant
-    paramètre: joueurs un liste de joueurs
+    paramètre: joueurs une liste de joueurs
     cette fonction ne retourne rien mais modifie la liste des joueurs
     """
+
     pass
     
 def distribuerTresors(joueurs,nbTresors=24, nbTresorMax=0):
@@ -75,6 +77,7 @@ def getJoueurCourant(joueurs):
     paramètre: joueurs la liste des joueurs
     résultat: le joueur courant
     """
+    return getJoueurCourant(joueurs)
     pass
 
 def joueurCourantTrouveTresor(joueurs):
@@ -147,7 +150,9 @@ def joueurCourantAFini(joueurs):
     pass
 
 if __name__=='__main__':
-  joueurs=(ListeJoueurs(['Joseph','Mathieu']))
+  joueurs=(ListeJoueurs(['Joseph','Mathieu','Pierre']))
   print(joueurs)
-  print(ajouterJoueur(joueurs, ['Leon']))
+  print(ajouterJoueur(joueurs, 'Leon'))
   print(joueurs)
+  
+

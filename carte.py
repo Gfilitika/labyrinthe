@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+        # -*- coding: utf-8 -*-
 """
         Projet Labyrinthe 
         Projet Python 2020 - Licence Informatique UNC (S3 TREC7)
