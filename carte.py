@@ -164,22 +164,33 @@ def tournerHoraire(c):
     fait tourner la carte dans le sens horaire
     paramètres: c une carte
     Cette fonction modifie la carte mais ne retourne rien   """
-    
-    pass
+    aux=c['ouest']
+    c['ouest']=c['sud']
+    c['sud']=c['est']
+    c['est']=c['nord']
+    c['nord']=aux
 
 def tournerAntiHoraire(c):
     """
     fait tourner la carte dans le sens anti-horaire
     paramètres: c une carte
     Cette fonction modifie la carte mais ne retourne rien    """
-    pass
+    aux=c['nord']
+    c['nord']=c['est']
+    c['est']=c['sud']
+    c['sud']=c['ouest']
+    c['ouest']=aux
 
 def tourneAleatoire(c):
     """
     faire tourner la carte d'un nombre de tours aléatoire
     paramètres: c une carte
     Cette fonction modifie la carte mais ne retourne rien    """
-    pass
+    import random
+    x=random.randint(1,100)
+    for val in range(0,x,1) :
+      tournerHoraire(c)
+    return x
 
 def coderMurs(c):
     """
@@ -193,7 +204,25 @@ def coderMurs(c):
     paramètre c une carte
     retourne un entier indice du caractère semi-graphique de la carte
     """
-    pass
+    res=0
+    if c['nord']==True:
+      bN=1
+    else:
+      bN=0
+    if c['est']==True:
+      bE=1
+    else:
+      bE=0
+    if c['sud']==True:
+      bS=1
+    else:
+      bS=0
+    if c['ouest']==True:
+      bO=1
+    else:
+      bO=0
+    res=bN+10*bE+100*bS+1000*bO
+    return res
 
 def decoderMurs(c,code):
     """
@@ -202,14 +231,42 @@ def decoderMurs(c,code):
                code un entier codant les murs d'une carte
     Cette fonction modifie la carte mais ne retourne rien
     """    
-    pass
+    if code%10==1:
+      c['nord']=True
+    else:
+      c['nord']=False
+    code=code//10
+    if code%10==1:
+      c['est']=True
+    else:
+      c['est']=False
+    code=code//10
+    if code%10==1:
+      c['sud']=True
+    else:
+      c['sud']=False
+    code=code//10
+    if code%10==1:
+      c['ouest']=True
+    else:
+      c['ouest']=False
+    
 
 def toChar(c):
     """
     fournit le caractère semi graphique correspondant à la carte (voir la variable listeCartes au début de ce script)
     paramètres c une carte
     """
-    pass
+    res=0
+    if c['nord']==True:
+      res=res+2^0
+    if c['est']==True:
+      res=res+2^1
+    if c['sud']==True:
+      res=res+2^2
+    if c['ouest']==True:
+      res=res+2^3
+    return listeCartes[res]
 
 def passageNord(carte1,carte2):
     """
@@ -218,7 +275,11 @@ def passageNord(carte1,carte2):
     paramètres carte1 et carte2 deux cartes
     résultat un booléen
     """
-    pass
+    if carte1['nord']==False and carte2['sud']==False:
+      res=True
+    else: 
+      res=False
+    return res
 
 def passageSud(carte1,carte2):
     """
@@ -227,7 +288,11 @@ def passageSud(carte1,carte2):
     paramètres carte1 et carte2 deux cartes
     résultat un booléen
     """
-    pass
+    if carte1['sud']==False and carte2['nord']==False:
+      res='True'
+    else: 
+      res=False
+    return res
 
 def passageOuest(carte1,carte2):
     """
@@ -236,7 +301,11 @@ def passageOuest(carte1,carte2):
     paramètres carte1 et carte2 deux cartes
     résultat un booléen
     """
-    pass
+    if carte1['ouest']==False and carte2['est']==False:
+      res= True
+    else: 
+      res=False
+    return res
 
 def passageEst(carte1,carte2):
     """
@@ -245,34 +314,48 @@ def passageEst(carte1,carte2):
     paramètres carte1 et carte2 deux cartes
     résultat un booléen    
     """
-    pass
+    if carte1['est']==False and carte2['ouest']==False:
+      res= True
+    else: 
+      res=False
+    return res
 
 
 if __name__=='__main__':
-  c=Carte (False, True, False, False, tresor=0, pions=[])
+  c=Carte (True, True, True, False, tresor=0, pions=[])
   print(c)     
-  print(estValide(c))
-  print(murNord(c))
-  print(murSud(c))
-  print(murEst(c))
-  print(murOuest(c))
-  print(getListePions(c))
-  print(setListePions(c,[2,4]))
-  print(c)
+  #print(estValide(c))
+  #print(murNord(c))
+  #print(murSud(c))
+  #print(murEst(c))
+  #print(murOuest(c))
+  #print(getListePions(c))
+  #print(setListePions(c,[2,4]))
+  #print(c)
   #print(getNbPions(c))
-  print(possedePion(c,2))
-  print(getTresor(c))
-  print(prendreTresor(c))
-  print(c)
-  print(mettreTresor(c,2))
-  print(c)
-  print(prendrePion(c,6))
-  print(c)
-  print(poserPion(c,5))
-  print(c)
-  print(tournerHoraire(c))
-  print(c)
-  print(tournerHoraire(c))
-  print(c)
+  #print(possedePion(c,2))
+  #print(getTresor(c))
+  #print(prendreTresor(c))
+  #print(c)
+  #print(mettreTresor(c,2))
+  #print(c)
+  #print(prendrePion(c,6))
+  #print(c)
+  #print(poserPion(c,5))
+  #print(c)
+  #print(tournerHoraire(c))
+  #print(c)
   #print(tournerAntiHoraire(c))
   #print(c)
+  print(tourneAleatoire(c))
+  print(c)
+  print(coderMurs(c))
+  print(decoderMurs(c,1110))
+  print(c)
+  print(toChar(c))
+  carte1=Carte (False, True, True, False, tresor=0, pions=[])
+  carte2=Carte (True, False, False, True, tresor=0, pions=[])
+  print(passageNord(carte1,carte2))
+  print(passageSud(carte1,carte2))
+  print(passageOuest(carte1,carte2))
+  print(passageEst(carte1,carte2))
