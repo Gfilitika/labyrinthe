@@ -23,21 +23,23 @@ def Matrice(nbLignes,nbColonnes,valeurParDefaut=0):
       valeurParDefaut la valeur par défaut
     résultat la matrice ayant les bonnes propriétés
     """
-    pass
+    import numpy as np
+    a = np.zeros(shape=(nbLignes,nbColonnes))
+    return a
 
 def getNbLignes(matrice):
     """
     retourne le nombre de lignes de la matrice
     paramètre: matrice la matrice considérée
     """
-    pass
+    return len(matrice)
 
 def getNbColonnes(matrice):
     """
     retourne le nombre de colonnes de la matrice
     paramètre: matrice la matrice considérée
     """
-    pass
+    return len(matrice[0])
 
 def getVal(matrice,ligne,colonne):
     """
@@ -46,7 +48,7 @@ def getVal(matrice,ligne,colonne):
                 ligne le numéro de la ligne (en commençant par 0)
                 colonne le numéro de la colonne (en commençant par 0)
     """
-    pass
+    return matrice[ligne][colonne]
 
 def setVal(matrice,ligne,colonne,valeur):
     """
@@ -57,7 +59,7 @@ def setVal(matrice,ligne,colonne,valeur):
                 valeur la valeur à stocker dans la matrice
     cette fonction ne retourne rien mais modifie la matrice
     """
-    pass
+    matrice[ligne][colonne]=valeur
 
 
 #------------------------------------------        
@@ -73,7 +75,7 @@ def decalageLigneAGauche(matrice, numLig, nouvelleValeur=0):
                  nouvelleValeur la valeur à placer
     résultat la valeur qui a été ejectée lors du décalage
     """
-    pass
+    
 
 def decalageLigneADroite(matrice, numLig, nouvelleValeur=0):
     """
@@ -85,6 +87,7 @@ def decalageLigneADroite(matrice, numLig, nouvelleValeur=0):
     résultat: la valeur de la case "ejectée" par le décalage
     """
     pass
+    
 def decalageColonneEnHaut(matrice, numCol, nouvelleValeur=0):
     """
     decale la colonne numCol d'une case vers le haut en insérant une nouvelle
@@ -107,3 +110,13 @@ def decalageColonneEnBas(matrice, numCol, nouvelleValeur=0):
     """
     pass
 
+if __name__=='__main__':  
+  matrice=Matrice(3,4,valeurParDefaut=0)
+  print(matrice)
+  print(getNbLignes(matrice))
+  print(getNbColonnes(matrice))
+  print(getVal(matrice,1,0))
+  print(setVal(matrice,1,1,2))
+  print(matrice)
+  print(decalageLigneAGauche(matrice, 0, nouvelleValeur=1))
+  print(matrice)
