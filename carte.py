@@ -70,7 +70,6 @@ def murOuest(c):
     retourne un booléen indiquant si la carte possède un mur à l'ouest
     paramètre: c une carte
     """
-    
     return c['ouest']
 
 def getListePions(c):
@@ -78,7 +77,6 @@ def getListePions(c):
     retourne la liste des pions se trouvant sur la carte
     paramètre: c une carte
     """
-
     return c['pions']
 
 def setListePions(c,listePions):
@@ -88,7 +86,6 @@ def setListePions(c,listePions):
                 listePions: la liste des pions à poser
     Cette fonction ne retourne rien mais modifie la carte
     """
-
     res= c['pions'].extend(listePions)
     return res
 
@@ -251,7 +248,6 @@ def decoderMurs(c,code):
     else:
       c['ouest']=False
     
-
 def toChar(c):
     """
     fournit le caractère semi graphique correspondant à la carte (voir la variable listeCartes au début de ce script)

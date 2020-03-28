@@ -1,4 +1,4 @@
-0# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 """
     Projet Labyrinthe
     Projet Python 2020 - Licence Informatique UNC (S3 TREC7)
@@ -75,7 +75,13 @@ def decalageLigneAGauche(matrice, numLig, nouvelleValeur=0):
                  nouvelleValeur la valeur à placer
     résultat la valeur qui a été ejectée lors du décalage
     """
-    
+    ligne=matrice[numLig]
+    x=ligne[0]
+    for i in range(len(ligne)-1):
+      ligne[i]=ligne[i+1]
+    ligne[-1]=nouvelleValeur
+    return x
+
 
 def decalageLigneADroite(matrice, numLig, nouvelleValeur=0):
     """
@@ -86,8 +92,13 @@ def decalageLigneADroite(matrice, numLig, nouvelleValeur=0):
                  nouvelleValeur la valeur à placer
     résultat: la valeur de la case "ejectée" par le décalage
     """
-    pass
-    
+    ligne=matrice[numLig]
+    x=ligne[-1]
+    for i in range(len(ligne)-1):
+      ligne[i]=ligne[i-1]
+    ligne[0]=nouvelleValeur
+    return x
+  
 def decalageColonneEnHaut(matrice, numCol, nouvelleValeur=0):
     """
     decale la colonne numCol d'une case vers le haut en insérant une nouvelle
@@ -97,7 +108,12 @@ def decalageColonneEnHaut(matrice, numCol, nouvelleValeur=0):
                  nouvelleValeur la valeur à placer
     résultat: la valeur de la case "ejectée" par le décalage
     """
-    pass
+    x=matrice[0][numCol]
+    for ligne in range(len(matrice)-1):
+      matrice[ligne][numCol]=matrice[ligne+1][numCol]
+    matrice[-1][numCol]=nouvelleValeur
+    return x
+
 
 def decalageColonneEnBas(matrice, numCol, nouvelleValeur=0):
     """
@@ -108,7 +124,11 @@ def decalageColonneEnBas(matrice, numCol, nouvelleValeur=0):
                  nouvelleValeur la valeur à placer
     résultat: la valeur de la case "ejectée" par le décalage
     """
-    pass
+    x=matrice[-1][numCol]
+    for ligne in range(len(matrice)-1):
+      matrice[ligne][numCol]=matrice[ligne-1][numCol]
+    matrice[0][numCol]=nouvelleValeur
+    return x
 
 if __name__=='__main__':  
   matrice=Matrice(3,4,valeurParDefaut=0)
@@ -118,5 +138,11 @@ if __name__=='__main__':
   print(getVal(matrice,1,0))
   print(setVal(matrice,1,1,2))
   print(matrice)
-  print(decalageLigneAGauche(matrice, 0, nouvelleValeur=1))
+  print(decalageLigneAGauche(matrice, 0, nouvelleValeur=7))
+  print(matrice)
+  print(decalageLigneADroite(matrice, 2, nouvelleValeur=3))
+  print(matrice)
+  print(decalageColonneEnHaut(matrice, 3, nouvelleValeur=8))
+  print(matrice)
+  print(decalageColonneEnBas(matrice, 1, nouvelleValeur=9))
   print(matrice)

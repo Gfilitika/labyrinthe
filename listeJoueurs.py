@@ -21,7 +21,7 @@ def ListeJoueurs(nomsJoueurs):
     l=[]
     for x in nomsJoueurs:
       l.append(Joueur(x))
-    return {'liste':l,'indice':0}
+    return {'liste':l,'indice':0} 
 
 def ajouterJoueur(joueurs, joueur):
     """
@@ -38,9 +38,9 @@ def initAleatoireJoueurCourant(joueurs):
     paramètre: joueurs une liste de joueurs
     cette fonction ne retourne rien mais modifie la liste des joueurs
     """
+    nbJoueurs=len(joueurs['liste'])
+    joueurs['indice']=random.randint(0,nbJoueurs)
 
-    pass
-    
 def distribuerTresors(joueurs,nbTresors=24, nbTresorMax=0):
     """
     distribue de manière aléatoire des trésors entre les joueurs.
@@ -53,8 +53,19 @@ def distribuerTresors(joueurs,nbTresors=24, nbTresorMax=0):
                              de trésor possible  
     cette fonction ne retourne rien mais modifie la liste des joueurs
     """
-    pass
+    liste=joueurs['liste']
+    nbJoueurs=len(liste)
+    tresor=[]
+    val=nbTresorMax
+    for i in range(nbTresors):
+      tresors.append(i)
+      
 
+
+    joueurs['liste''nom']=random.randint(0,nbTresors)
+    
+
+    
 def changerJoueurCourant(joueurs):
     """
     passe au joueur suivant (change le joueur courant donc)
@@ -77,7 +88,7 @@ def getJoueurCourant(joueurs):
     paramètre: joueurs la liste des joueurs
     résultat: le joueur courant
     """
-    return getJoueurCourant(joueurs)
+    #return getJoueurCourant(joueurs)
     pass
 
 def joueurCourantTrouveTresor(joueurs):
@@ -152,7 +163,9 @@ def joueurCourantAFini(joueurs):
 if __name__=='__main__':
   joueurs=(ListeJoueurs(['Joseph','Mathieu','Pierre']))
   print(joueurs)
-  print(ajouterJoueur(joueurs, 'Leon'))
+  #print(ajouterJoueur(joueurs, 'Leon'))
+  #print(joueurs)
+  #print(initAleatoireJoueurCourant(joueurs))
+  #print(joueurs)
+  print(distribuerTresors(joueurs,nbTresors=24, nbTresorMax=0))
   print(joueurs)
-  
-
