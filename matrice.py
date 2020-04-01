@@ -144,5 +144,5 @@ if __name__=='__main__':
   print(matrice)
   print(decalageColonneEnHaut(matrice, 3, nouvelleValeur=8))
   print(matrice)
-  print(decalageColonneEnBas(matrice, 1, nouvelleValeur=9))
+  print(decalageColonneEnBas(matrice, 0, nouvelleValeur=9))
   print(matrice)

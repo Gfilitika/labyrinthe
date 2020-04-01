@@ -8,14 +8,14 @@
    
    Ce module gère un joueur. 
 """
-#tauliki
+
 def Joueur(nom):
     """
     creer un nouveau joueur portant le nom passé en paramètre. Ce joueur possède une liste de trésors à trouver vide
     paramètre: nom une chaine de caractères
     retourne le joueur ainsi créé
     """
-    l={'nom':nom,'tresors':[]}
+    l={'nom':nom,'tresor':[]}
 
     return l
 
@@ -27,8 +27,8 @@ def ajouterTresor(joueur,tresor):
         tresor un entier strictement positif
     la fonction ne retourne rien mais modifie le joueur
     """
-    if tresor not in joueur['tresors']:
-      joueur['tresors'].append(tresor)
+    if tresor not in joueur['tresor']:
+      joueur['tresor'].append(tresor)
 
 
 def prochainTresor(joueur):
@@ -38,10 +38,10 @@ def prochainTresor(joueur):
         joueur le joueur
     résultat un entier représentant le trésor ou None
     """
-    if len(joueur['tresors']) == 0:
+    if len(joueur['tresor']) == 0:
       res=None
     else:
-      res=joueur['tresors'][0]
+      res=joueur['tresor'][0]
     return res
 
 
@@ -52,7 +52,7 @@ def tresorTrouve(joueur):
         joueur le joueur
     la fonction ne retourne rien mais modifie le joueur
     """
-    del (joueur['tresors'][0])
+    del (joueur['tresor'][0])
 
 def getNbTresorsRestants(joueur):
     """
@@ -60,7 +60,7 @@ def getNbTresorsRestants(joueur):
     paramètre: joueur le joueur
     résultat: le nombre de trésors attribués au joueur
     """
-    return len(joueur['tresors'])
+    return len(joueur['tresor'])
 
 def getNom(joueur):
     """

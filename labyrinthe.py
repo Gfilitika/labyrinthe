@@ -33,6 +33,8 @@ def getPlateau(labyrinthe):
     paramètre: labyrinthe le labyrinthe considéré
     résultat: la matrice représentant le plateau de ce labyrinthe
     """
+    Plateau(nbJoueurs, nbTresors)
+    return labyrinthe[]
     pass
 
 def getNbParticipants(labyrinthe):

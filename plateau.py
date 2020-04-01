@@ -22,8 +22,7 @@ def Plateau(nbJoueurs, nbTresors):
                 ont été placée de manière aléatoire
               - la carte amovible qui n'a pas été placée sur le plateau
     """
-    p={'nbJoueurs':0,'nbTresors':0}
-    return p
+    
     pass
 
 
@@ -37,6 +36,7 @@ def creerCartesAmovibles(tresorDebut,nbTresors):
                 nbTresors: le nombre total de trésor à créer
     résultat: la liste mélangée aléatoirement des cartes amovibles créees
     """
+    Carte (nord, est, sud, ouest, tresor=0, pions=[])
     pass
 
 def prendreTresorPlateau(plateau,lig,col,numTresor):
@@ -50,6 +50,7 @@ def prendreTresorPlateau(plateau,lig,col,numTresor):
                 numTresor: le numéro du trésor à prendre sur la carte
     resultat: un booléen indiquant si le trésor était bien sur la carte considérée
     """
+    getTresor(c)
     pass
 
 def getCoordonneesTresor(plateau,numTresor):
@@ -81,7 +82,9 @@ def prendrePionPlateau(plateau,lin,col,numJoueur):
                 numJoueur: le numéro du joueur qui correspond au pion
     Cette fonction ne retourne rien mais elle modifie le plateau
     """
+    prendrePion(c, pion)
     pass
+    
 def poserPionPlateau(plateau,lin,col,numJoueur):
     """
     met le pion du joueur sur la carte qui se trouve en (lig,col) du plateau
@@ -91,6 +94,7 @@ def poserPionPlateau(plateau,lin,col,numJoueur):
                 numJoueur: le numéro du joueur qui correspond au pion
     Cette fonction ne retourne rien mais elle modifie le plateau
     """
+    poserPion(c, pion)
     pass
 
 
@@ -124,4 +128,5 @@ def accessibleDist(plateau,ligD,colD,ligA,colA):
     pass
 
 if __name__=='__main__':
+  
   

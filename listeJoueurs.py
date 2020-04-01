@@ -52,19 +52,16 @@ def distribuerTresors(joueurs,nbTresors=24, nbTresorMax=0):
                              si ce paramètre vaut 0 on distribue le maximum
                              de trésor possible  
     cette fonction ne retourne rien mais modifie la liste des joueurs
-    """
-    liste=joueurs['liste']
-    nbJoueurs=len(liste)
-    tresor=[]
-    val=nbTresorMax
-    for i in range(nbTresors):
-      tresors.append(i)
+    """ 
+    x=int(nbTresors/len(joueurs['liste']))
+    for val in range(x-1):
+      tresor=random.randint(0,nbTresorMax)
+      for joueur in joueurs['liste']: 
+        if joueur['tresor']!=nbTresors:
+          joueur['tresor'].append(ajouterTresor(joueur,tresor))
       
-
-
-    joueurs['liste''nom']=random.randint(0,nbTresors)
-    
-
+      
+      
     
 def changerJoueurCourant(joueurs):
     """
@@ -72,7 +69,7 @@ def changerJoueurCourant(joueurs):
     paramètres: joueurs la liste des joueurs
     cette fonction ne retourne rien mais modifie la liste des joueurs
     """   
-    pass
+    joueurs['indice']=joueurs['indice']+1
 
 def getNbJoueurs(joueurs):
     """
@@ -80,7 +77,10 @@ def getNbJoueurs(joueurs):
     paramètre: joueurs la liste des joueurs
     résultat: le nombre de joueurs de la partie
     """
-    pass
+    cpt=0
+    for joueur in joueurs['liste']:
+      cpt=cpt+1
+    return cpt
 
 def getJoueurCourant(joueurs):
     """
@@ -88,8 +88,7 @@ def getJoueurCourant(joueurs):
     paramètre: joueurs la liste des joueurs
     résultat: le joueur courant
     """
-    #return getJoueurCourant(joueurs)
-    pass
+    return joueurs['liste'][joueurs['indice']]
 
 def joueurCourantTrouveTresor(joueurs):
     """
@@ -98,7 +97,8 @@ def joueurCourantTrouveTresor(joueurs):
     paramètre: joueurs la liste des joueurs
     cette fonction ne retourne rien mais modifie la liste des joueurs
     """
-    pass
+    tresorTrouve(joueurs['liste']['indice'])
+    
 
 def nbTresorsRestantsJoueur(joueurs,numJoueur):
     """
@@ -108,7 +108,8 @@ def nbTresorsRestantsJoueur(joueurs,numJoueur):
                 numJoueur le numéro du joueur
     résultat: le nombre de trésors que joueur numJoueur doit encore trouver
     """
-    pass
+    nbtresor=getNbTresorsRestants(joueurs['liste'][numJoueur])
+    return nbtresor
 
 def numJoueurCourant(joueurs):
     """
@@ -116,7 +117,7 @@ def numJoueurCourant(joueurs):
     paramètre: joueurs la liste des joueurs
     résultat: le numéro du joueur courant
     """
-    pass
+    return joueurs['indice']
 
 def nomJoueurCourant(joueurs):
     """
@@ -124,7 +125,9 @@ def nomJoueurCourant(joueurs):
     paramètre: joueurs la liste des joueurs
     résultat: le nom du joueur courant
     """
-    pass
+    nom=getNom(joueurs['liste'][joueurs['indice']])
+    return nom
+    
 
 def nomJoueur(joueurs,numJoueur):
     """
@@ -133,7 +136,9 @@ def nomJoueur(joueurs,numJoueur):
                 numJoueur le numéro du joueur    
     résultat: le nom du joueur numJoueur
     """
-    pass
+    nom=getNom(joueurs['liste'][numJoueur])
+    return nom
+
 
 def prochainTresorJoueur(joueurs,numJoueur):
     """
@@ -142,7 +147,8 @@ def prochainTresorJoueur(joueurs,numJoueur):
                 numJoueur le numéro du joueur    
     résultat: le prochain trésor du joueur numJoueur (un entier)
     """
-    pass
+    tresor=prochainTresor(joueurs[numJoueur])
+    return tresor
 
 def tresorCourant(joueurs):
     """
@@ -150,7 +156,7 @@ def tresorCourant(joueurs):
     paramètre: joueurs la liste des joueurs 
     résultat: le prochain trésor du joueur courant (un entier)
     """
-    pass
+    return prochainTresor(joueurs['liste'][joueurs['indice']])
 
 def joueurCourantAFini(joueurs):
     """
@@ -158,7 +164,10 @@ def joueurCourantAFini(joueurs):
     paramètre: joueurs la liste des joueurs 
     résultat: un booleen indiquant si le joueur courant a fini
     """
-    pass
+    res=False
+    if joueurs['liste'][joueurs['indice']]['tresors']==[]:
+      res=True
+    return res
 
 if __name__=='__main__':
   joueurs=(ListeJoueurs(['Joseph','Mathieu','Pierre']))
@@ -167,5 +176,20 @@ if __name__=='__main__':
   #print(joueurs)
   #print(initAleatoireJoueurCourant(joueurs))
   #print(joueurs)
-  print(distribuerTresors(joueurs,nbTresors=24, nbTresorMax=0))
-  print(joueurs)
+  ##print(distribuerTresors(joueurs,nbTresors=24, nbTresorMax=0))
+  #print(joueurs)
+  #print(changerJoueurCourant(joueurs))
+  #print(joueurs)
+  #print(getNbJoueurs(joueurs))
+  #print(getJoueurCourant(joueurs))
+  #print(joueurCourantTrouveTresor(joueurs))
+  #print(joueurs)
+  #print(nbTresorsRestantsJoueur(joueurs,0))
+  #print(numJoueurCourant(joueurs))
+  #print(nomJoueurCourant(joueurs))
+  #print(nomJoueur(joueurs,2))
+  #print(ajouterTresor(joueurs))
+  #print(joueurs)
+  #print(prochainTresorJoueur(joueurs,0))
+  #print(tresorCourant(joueurs))
+  #print(joueurCourantAFini(joueurs))
